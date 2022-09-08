@@ -39,9 +39,9 @@ elseif(APPLE)
     set(ASSETDIR "abuse.app/Contents/Resources/data")
 else()
     # Under Linux, match the original autotools prefix
-    set(ASSETDIR "share/games/abuse")
+    set(ASSETDIR "./gamedata")
     # Only define this for ports that actually use it
-    add_definitions(-DASSETDIR="${CMAKE_INSTALL_PREFIX}/${ASSETDIR}")
+    add_definitions(-DASSETDIR="${ASSETDIR}")
 endif()
 
 add_definitions(-DPACKAGE_NAME="abuse")

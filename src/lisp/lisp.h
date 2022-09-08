@@ -13,6 +13,7 @@
 
 #include <cstdlib>
 #include <SDL_config.h>//AR (#include <SDL_config.h>)
+#include <stdint.h>
 
 #ifdef L_PROFILE
 #include "timing.h"

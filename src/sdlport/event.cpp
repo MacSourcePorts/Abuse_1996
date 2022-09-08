@@ -38,6 +38,7 @@
 
 extern SDL_Window *window;
 extern SDL_Surface *surface;
+extern flags_struct flags;
 
 extern Settings settings;
 extern int get_key_binding(char const *dir, int i);

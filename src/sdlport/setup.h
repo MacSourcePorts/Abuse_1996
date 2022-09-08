@@ -12,6 +12,19 @@
 #ifndef _SETUP_H_
 #define _SETUP_H_
 
+struct flags_struct
+{
+    short fullscreen;
+    short mono;
+    short nosound;
+    short grabmouse;
+    short xres;
+    short yres;
+    short overlay;
+    int antialias;
+    int software;
+};
+
 #include <string>
 
 class Settings
