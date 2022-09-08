@@ -93,13 +93,13 @@ if(OPENGL_FOUND)
     target_link_libraries(abuse ${OPENGL_LIBRARIES})
 endif(OPENGL_FOUND)
 
-add_executable(abuse-tool
-	tool/abuse-tool.cpp
-	crc.cpp crc.h
-	tool/AR_SPEC.cpp tool/AR_SPEC.h
-	tool/AR_Help.cpp tool/AR_Help.h)
+# add_executable(abuse-tool
+# 	tool/abuse-tool.cpp
+# 	crc.cpp crc.h
+# 	tool/AR_SPEC.cpp tool/AR_SPEC.h
+# 	tool/AR_Help.cpp tool/AR_Help.h)
 
-target_link_libraries(abuse-tool imlib)
+# target_link_libraries(abuse-tool imlib)
 
 include_directories(
     ${abuse_SOURCE_DIR}/src
@@ -133,7 +133,7 @@ if(WIN32)
     install(FILES ${SDL2MIXER_DLL_PATH}/SDL2_mixer.dll DESTINATION ".")
 else()
     # Under Linux, we want the tools in bin
-    install(TARGETS abuse abuse-tool RUNTIME DESTINATION bin
+    install(TARGETS abuse RUNTIME DESTINATION bin
     BUNDLE DESTINATION "${CMAKE_INSTALL_PREFIX}")
     if(APPLE)
         install(FILES "../osx/abuse.icns" DESTINATION "${CMAKE_INSTALL_PREFIX}/abuse.app/Contents/Resources")
