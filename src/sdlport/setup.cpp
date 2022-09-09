@@ -669,8 +669,14 @@ void setup( int argc, char **argv )
 	//handle command-line parameters
     parseCommandLine(argc,argv);
 
+#ifdef __APPLE__
+	// Cheating a bit here, using "abuse" as the org and "user" as the app
+	const char *sdlPath = SDL_GetPrefPath("abuse", "user");
+	if(settings.local_save) set_save_filename_prefix(sdlPath);
+#else
 	//AR override save game directory to local directory
 	if(settings.local_save) set_save_filename_prefix("user/");
+#endif
 
 	printf("Setting save dir to %s\n", get_save_filename_prefix());
 
